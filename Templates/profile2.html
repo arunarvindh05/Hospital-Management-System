@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='profile.css') }} "
+    />
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% block head %}
+    <title>Hospital Management System</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div class="p-3 mb-2 bg-primary text-white">
+      <nav class="navbar navbar-dark bg-primary text-white">
+        <h1
+          class="align-middle"
+          style="
+            text-align: left;
+            padding-left: 20px;
+            font-size: 60px;
+            margin-left: 13.5%;
+          "
+        >
+          ABC Hospital Management System
+        </h1>
+
+      </nav>
+    </div>
+
+    <div class="row">
+      <div
+        class="card1"
+        style="color: rgb(33, 202, 75); background-color: rgb(17, 162, 170);"
+      >
+        <div class="header">
+          <h3 id="new" style="text-align: center;">
+            Welcome Pharmacist
+          </h3>
+        </div>
+        <div class="body">
+          <ul style="background-color: rgb(17, 162, 170); text-align: center;">
+            <li>
+              <i class="fas fa-chart-pie icon"></i
+              ><a href="#" style="color: white;">Home</a>
+            </li>
+            <li>
+              <i class="fas fa-chart-pie icon"></i
+              ><a href="getpharmapatients" style="color: white;"
+                >Search patient</a
+              >
+            </li>
+            <li>
+              <i class="fas fa-chart-pie icon"></i
+              ><a href="issuemed" style="color: white;">Issue Medicines</a>
+            </li>
+            <li>
+              <i class="fas fa-chart-pie icon"></i
+              ><a href="/" style="color: white;">logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      {% block body %} {% endblock %}
+    </div>
+  </body>
+</html>

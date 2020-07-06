@@ -1,0 +1,95 @@
+{% extends 'profile3.html' %} {% block head %}
+<title>Add Diagnosis</title>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css"
+/>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+
+{% endblock %} {% block body %}
+
+<div class="mx-auto col-sm-8">
+  <!-- form user info -->
+  <div class="card" style="margin-left: 20%; margin-top: 5%;">
+    <div class="card-header" style="background-color: rgb(45, 187, 26);">
+      <h4 class="mb-0" style="color: white;">Add Diagnosis Test</h4>
+    </div>
+    <div class="card-body">
+      <form class="form" method="POST" role="form" autocomplete="off">
+        
+
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label"
+              >Diagnosis name</label
+            >
+            <div class="col-lg-9">
+              <select class="form-control" name="dname" style="width: 60%;">
+                <option value="" disabled selected>Choose from options</option>
+                <option value="Blood Test">Blood Test</option>
+                <option value="X-Ray Test">X-Ray Test</option>
+                <option value="Radiology">Radiology</option>
+                <option value="MRI"> MRI</option>
+                <option value="Genetic Test">Genetic Test</option>
+                <option value="Endoscopy">Endoscopy</option>
+                <option value="Hemoglobin A1C">Hemoglobin A1C</option>
+                <option value="Biopsy">Biopsy</option>
+                <option value="ECG">ECG</option>
+              </select>
+            </div>
+          </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label"></label>
+          <div class="col-lg-9">
+            <a href="profile2" style="padding:5px 12px 10px 14px ; background-color: red; text-decoration: none; color: white; border-radius: 4px; ">Cancel</a>
+            <button
+              type="submit"
+              class="btn btn-secondary"
+              style="background-color: rgb(45, 187, 26); margin-left: 4%;"
+              name="get1"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  {% if z %}
+  <h2 class="error" style="text-align: center;"> {{ z }}</h2>
+  {% endif %}
+  
+  <!-- /form user info -->
+  {% if k %}
+  <table class="table">
+    <thead style="background-color: rgb(45, 187, 26); color: white;">
+      <th>ID</th>
+      <th>Medicine Name</th>
+      <th>Quantity Issued</th>
+      <th>Rate of Medicine in Rs.</th>
+      <th>Total Amount</th>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td>{{ k[0] }}</td>
+        <td>{{ k[1] }}</td>
+        <td>{{ k[2] }}</td>
+        <td>{{ k[3] }}</td>
+        <td>{{ k[4] }}</td>
+    </tbody>
+  </table>
+  <a href="diag" style="padding:5px 12px 10px 14px ; background-color: blue; text-decoration: none; color: white; border-radius: 4px; text-align: center; ">Issue Diagnostics</a>
+  {% endif %}
+</div>
+{% endblock %}

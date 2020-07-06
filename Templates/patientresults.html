@@ -1,0 +1,44 @@
+{% extends 'profile2.html' %} {% block head %}
+<title>Search Results</title>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+  crossorigin="anonymous"
+/>
+
+{% endblock %} {% block body %}
+
+<div class="col-lg-8" style="margin: 5% 0% 0% 7%">
+  <table class="table">
+    <thead style="background-color: rgb(45, 187, 26); color: white;">
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Date of admission</th>
+      <th>Type of Bed</th>
+      <th>Address</th>
+      <th>Medicine Name</th>
+      <th>Quantity Issued</th>
+      <th>Rate</th>
+      <th>Total Amount</th>
+    </thead>
+    <tbody>
+      {% for i in z %}
+      <tr>
+        <td>{{ i[0] }}</td>
+        <td>{{ i[2] }}</td>
+        <td>{{ i[3] }}</td>
+        <td>{{ i[4] }}</td>
+        <td>{{ i[5] }}</td>
+        <td>{{ i[6] }}</td>
+        <td>Cough syrup</td>
+        <td>2</td>
+        <td>40</td>
+        <td>80</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
